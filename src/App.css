@@ -1,0 +1,400 @@
+.app-shell {
+  min-height: 100vh;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(18px);
+  background: rgba(245, 237, 229, 0.82);
+  border-bottom: 1px solid rgba(63, 35, 21, 0.08);
+}
+
+.site-header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand-mark {
+  display: inline-flex;
+  flex-direction: column;
+  color: var(--ink-strong);
+}
+
+.brand-mark__eyebrow,
+.hero-banner__eyebrow,
+.section-heading__eyebrow,
+.featured-card__label,
+.review-card__critic,
+.movie-card__genre,
+.metric-card__label,
+.search-field__label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.brand-mark__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2vw, 1.8rem);
+  line-height: 1;
+}
+
+.hero-banner {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.hero-banner::before,
+.hero-banner::after {
+  content: '';
+  position: absolute;
+  inset: auto;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  filter: blur(20px);
+  z-index: -1;
+}
+
+.hero-banner::before {
+  top: -3rem;
+  left: -6rem;
+  background: rgba(191, 95, 57, 0.22);
+}
+
+.hero-banner::after {
+  right: 0;
+  bottom: 2rem;
+  background: rgba(41, 92, 69, 0.18);
+}
+
+.hero-banner__panel,
+.featured-card,
+.movie-detail__panel,
+.status-panel,
+.loading-panel,
+.review-card,
+.metric-card,
+.movie-card {
+  background: var(--surface);
+  border: 1px solid rgba(63, 35, 21, 0.08);
+  box-shadow: 0 22px 50px rgba(63, 35, 21, 0.08);
+}
+
+.hero-banner__panel {
+  padding: clamp(1.75rem, 4vw, 3rem);
+  border-radius: 2rem;
+}
+
+.hero-banner__title,
+.movie-detail__title,
+.section-heading__title,
+.featured-card h2,
+.status-panel h3,
+.review-card__title,
+.movie-card__title {
+  font-family: var(--font-display);
+  color: var(--ink-strong);
+}
+
+.hero-banner__title {
+  font-size: clamp(3rem, 8vw, 5.4rem);
+  line-height: 0.96;
+  max-width: 10ch;
+  margin-bottom: 1rem;
+}
+
+.hero-banner__summary {
+  font-size: 1.08rem;
+  max-width: 55ch;
+  margin-bottom: 1.5rem;
+}
+
+.search-field {
+  display: block;
+  padding: 1rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(63, 35, 21, 0.08);
+}
+
+.search-field__label {
+  display: block;
+  color: var(--ink-muted);
+  margin-bottom: 0.65rem;
+}
+
+.search-field .form-control {
+  background: transparent;
+  color: var(--ink-strong);
+  box-shadow: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.featured-card {
+  height: 100%;
+  border-radius: 1.75rem;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(245, 231, 218, 0.96)),
+    var(--surface);
+}
+
+.featured-card__meta,
+.movie-detail__release,
+.section-heading__count,
+.movie-card__synopsis,
+.review-card__body,
+.status-panel,
+.loading-panel {
+  color: var(--ink-muted);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1.5rem;
+}
+
+.section-heading__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0;
+}
+
+.catalogue-section {
+  position: relative;
+}
+
+.movie-card {
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.movie-card__poster,
+.movie-detail__poster,
+.poster-fallback {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  background: linear-gradient(135deg, #203a43, #2c5364 50%, #f59f6b 115%);
+}
+
+.movie-card__poster {
+  aspect-ratio: 3 / 4;
+}
+
+.movie-detail__poster {
+  aspect-ratio: 4 / 5;
+  border-radius: 1.75rem;
+  box-shadow: 0 24px 48px rgba(12, 16, 29, 0.18);
+}
+
+.poster-fallback {
+  align-items: center;
+  color: white;
+  display: flex;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  justify-content: center;
+  letter-spacing: 0.08em;
+}
+
+.movie-card__genre,
+.review-card__critic,
+.featured-card__label,
+.hero-banner__eyebrow,
+.section-heading__eyebrow,
+.metric-card__label {
+  color: var(--accent-dark);
+  margin-bottom: 0.5rem;
+}
+
+.movie-card__title {
+  font-size: 1.8rem;
+  line-height: 1;
+  margin: 0;
+}
+
+.movie-card__synopsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  min-height: 4.65rem;
+}
+
+.movie-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+}
+
+.score-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.score-badge__track {
+  height: 0.55rem;
+  border-radius: 999px;
+  background: rgba(34, 74, 57, 0.14);
+  overflow: hidden;
+}
+
+.score-badge__fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #c86f43, #295c45);
+}
+
+.score-badge__text {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+}
+
+.score-badge__text strong,
+.review-card__score strong,
+.metric-card strong {
+  color: var(--ink-strong);
+  font-size: 1.05rem;
+}
+
+.movie-detail__panel {
+  border-radius: 1.75rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.movie-detail__title {
+  font-size: clamp(2.75rem, 6vw, 4.6rem);
+  line-height: 0.95;
+  margin-bottom: 0.75rem;
+}
+
+.movie-detail__summary {
+  font-size: 1.08rem;
+  max-width: 58ch;
+}
+
+.metric-card {
+  border-radius: 1.25rem;
+  padding: 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  height: 100%;
+}
+
+.reviews-section {
+  padding-top: 1rem;
+}
+
+.review-card {
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+}
+
+.review-card__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.review-card__title {
+  font-size: 1.75rem;
+  margin: 0;
+}
+
+.review-card__score {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  text-align: right;
+  color: var(--ink-muted);
+}
+
+.review-card__body {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.status-panel,
+.loading-panel {
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+
+.status-panel--error {
+  border-color: rgba(155, 44, 44, 0.16);
+}
+
+.back-link {
+  color: var(--accent-dark);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.movie-card--skeleton {
+  overflow: hidden;
+}
+
+.movie-card__poster--placeholder .placeholder {
+  display: block;
+  min-height: 100%;
+}
+
+@media (max-width: 991px) {
+  .site-header__bar,
+  .section-heading,
+  .score-badge__text,
+  .review-card__header {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .review-card__score {
+    align-items: start;
+    text-align: left;
+  }
+
+  .hero-banner__title,
+  .movie-detail__title {
+    max-width: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-banner__panel,
+  .featured-card,
+  .movie-detail__panel,
+  .review-card,
+  .status-panel,
+  .loading-panel {
+    border-radius: 1.25rem;
+  }
+
+  .movie-card__title,
+  .review-card__title {
+    font-size: 1.45rem;
+  }
+}
